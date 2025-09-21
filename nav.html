@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AwazSolver.com</title>
+     <link rel="stylesheet" href="nav.css">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="mic.html">
+
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logos">Awaz Solver
+        </div>
+      <div class="menu-icon" id="menu-icon">&#9776</div>
+   <ul class="nav-links">
+    <li><a href="nav.html">Home</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Contact</a></li>
+   </ul>
+    </nav>
+ <div class="card"><p>Awaz is an AI-powered coding assistant that listens to your voice and instantly generates working code.
+Speak your ideas, and Awaz transforms them into structured programs with speed and precision.
+No typing needed — just talk, and let Awaz write the code for you.</p></div>
+
+
+
+<!-- Input field with mic button -->
+
+<div class ="vocal"   >
+   <div class="helo">
+    <h1 id="typewriter">Sites beyond imagination, one prompt away.</h1>
+  </div>
+  <input type="text" id="voiceInput" placeholder="Speak something..." style="padding:8px;width:250px;">
+  <button id="micBtn"><img src="microphone-342.svg" alt=""></button>
+
+</div>
+<!-- <p id="status"></p> -->
+<script src="function.js"></script>
+
+
+<div class="Output">
+     <div class="txt"><h1> “Ideas spoken,<br>
+      instantly transformed into code.”</h1></div>
+     <div class="maincode"> </div>
+
+<!-- Result Section -->
+<section class="result">
+  <div class="result-container" id="outputBox">
+    <h2>Generated Output Area</h2>
+    <!-- Messages will be appended here -->
+  </div>
+</section>
+
+<script src="outy.js"></script>
+
+
+
+
+</body>
+</html>

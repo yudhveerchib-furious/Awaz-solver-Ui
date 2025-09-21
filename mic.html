@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Microphone Logo — Copyable</title>
+  <style>
+    :root{
+      --size:120px; /* change to scale */
+      --primary:#333; /* main color */
+      --accent:#4f46e5; /* hover color */
+      --bg:transparent;
+    }
+
+    body{display:flex;min-height:100vh;align-items:center;justify-content:center;background:var(--bg);font-family:Inter,system-ui,Arial;color:#111}
+
+    .mic-wrap{width:var(--size);height:var(--size);display:grid;place-items:center;}
+
+    /* SVG is structured to scale — we apply a subtle animation on hover */
+    .mic-svg{width:100%;height:100%;transition:transform .28s ease, filter .28s ease;filter:drop-shadow(0 6px 12px rgba(0,0,0,.12));}
+    .mic-wrap:hover .mic-svg{transform:translateY(-6%) scale(1.05);filter:drop-shadow(0 12px 22px rgba(79,70,229,.14));}
+
+    /* make stroke and fill use CSS variables */
+    .stroke{stroke:var(--primary);}
+    .fill{fill:var(--primary);}
+
+    /* accent state (applies when class .active is set) */
+    .mic-wrap.active .stroke{stroke:var(--accent);}
+    .mic-wrap.active .fill{fill:var(--accent);}
+
+    /* small accessibility helper text */
+    .hint{font-size:12px;margin-top:12px;opacity:.7;text-align:center}
+
+    /* responsive: allow a smaller default on narrow screens */
+    @media (max-width:420px){:root{--size:88px}}
+  </style>
+</head>
+<body>
+  <div style="text-align:center">
+    <div class="mic-wrap" id="mic" role="img" aria-label="Microphone logo — click to toggle active">
+      <!-- SVG microphone icon — single-file, scalable, accessible -->
+      <svg class="mic-svg" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <!-- Body -->
+        <rect x="20" y="8" width="24" height="32" rx="12" class="fill" opacity="0.98"></rect>
+        <!-- Inner grill lines -->
+        <g stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.18">
+          <line x1="28" y1="14" x2="36" y2="14"></line>
+          <line x1="28" y1="18" x2="36" y2="18"></line>
+          <line x1="28" y1="22" x2="36" y2="22"></line>
+          <line x1="28" y1="26" x2="36" y2="26"></line>
+        </g>
+
+        <!-- Stem -->
+        <rect x="30" y="40" width="4" height="8" rx="2" class="fill"></rect>
+
+        <!-- Base stand -->
+        <path d="M20 52h24" stroke-width="3" stroke-linecap="round" class="stroke" fill="none"></path>
+        <path d="M24 56c3 1.5 6 1.5 16 0" stroke-width="2.2" stroke-linecap="round" class="stroke" fill="none" opacity="0.9"></path>
+
+        <!-- Outline -->
+        <rect x="20" y="8" width="24" height="32" rx="12" fill="none" stroke-width="2.2" class="stroke"></rect>
+
+      </svg>
+    </div>
+
+    <div class="hint">Click the icon to toggle active color</div>
+  </div>
+
+  <script>
+    // small interactivity: toggle .active on click so color and shadow change
+    const mic = document.getElementById('mic');
+    mic.addEventListener('click', ()=> mic.classList.toggle('active'));
+
+    // keyboard accessibility: Enter/Space toggles
+    mic.tabIndex = 0;
+    mic.addEventListener('keydown', (e)=>{
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); mic.classList.toggle('active'); }
+    });
+  </script>
+</body>
+</html>
